@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">travelplan</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="fullname">Fullname</string>
+    <string name="email">E-mail</string>
+    <string name="login">Login B-Travel Plan</string>
+    <string name="btnlogin">Login</string>
+    <string name="createacc">Create a new account?</string>
+    <string name="signup">Signup B-Travel Plan</string>
+    <string name="btnsignup2">Have an account?</string>
+    <string name="btnsignup">Signup</string>
+    <string name="nexttologin">here</string>
+</resources>
