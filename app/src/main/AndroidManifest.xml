@@ -12,16 +12,15 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Travelplan">
-        <activity android:name=".Login">
+        <activity android:name=".Login" />
+        <activity android:name=".Signup" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Signup" />
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
