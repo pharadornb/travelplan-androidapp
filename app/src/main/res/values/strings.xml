@@ -11,4 +11,9 @@
     <string name="btnsignup2">Have an account?</string>
     <string name="btnsignup">Signup</string>
     <string name="nexttologin">here</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_travel">Travel</string>
+    <string name="title_trip">Trip</string>
+    <string name="title_me">Me</string>
 </resources>

@@ -88,7 +88,7 @@ public class Login extends AppCompatActivity {
                                         editor.commit();*/
 
                                         Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                                        Intent intent = new Intent(getApplicationContext(), Signup.class);
                                         intent.putExtra(EXTRA_MESSAGE, username);
                                         startActivity(intent);
                                         finish();
