@@ -3,6 +3,7 @@ package com.project.travelplan;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -25,6 +26,10 @@ public class Login extends AppCompatActivity {
     EditText txtUsername, txtPassword;
     Button buttonlogin;
     ProgressBar progressBar;
+
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String TEXT = "text";
+    public final static String EXTRA_MESSAGE = "com.project.travelplan";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,13 +82,14 @@ public class Login extends AppCompatActivity {
                                     String result = putData.getResult();
                                     if(result.equals("Login Success")){
 
-                                        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+                                        /*SharedPreferences sharedPref = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
                                         SharedPreferences.Editor editor = sharedPref.edit();
-                                        editor.putInt("saved_high_score", txtUsername);
-                                        editor.commit();
+                                        editor.putString(TEXT, username);
+                                        editor.commit();*/
 
                                         Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                                        intent.putExtra(EXTRA_MESSAGE, username);
                                         startActivity(intent);
                                         finish();
                                     }else{
