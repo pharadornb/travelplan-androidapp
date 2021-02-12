@@ -35,7 +35,6 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         getSupportActionBar().hide();
 
         txtnextcreate = findViewById(R.id.nexttocreate);
@@ -88,7 +87,7 @@ public class Login extends AppCompatActivity {
                                         editor.commit();*/
 
                                         Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(getApplicationContext(), Signup.class);
+                                        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                                         intent.putExtra(EXTRA_MESSAGE, username);
                                         startActivity(intent);
                                         finish();
