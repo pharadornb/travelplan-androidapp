@@ -20,4 +20,6 @@
     <string name="hello_blank_fragment1">1Hello blank fragment1******</string>
     <string name="hello_blank_fragment2">2Hello blank fragment2++++++++++</string>
     <string name="hello_blank_fragment3">3Hello blank fragment3-----------</string>
+
+    <string name="urlserver">http://pharadorn.lnw.mn/API/markers.php</string>
 </resources>
