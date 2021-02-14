@@ -57,11 +57,6 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-//    private MyAsyncTask myAsyncTask = null;
-//    private boolean myAsyncTaskIsRunning = true;
-//public final static String EXTRA_MESSAGE = "com.project.travelplan";
-//    public final static String EXTRA_MESSAGE2 = "com.project.travelplan";
-
     private ListView sampleList;
     private ArrayList<String> exData;
     private ArrayList<String> lat;
@@ -74,7 +69,6 @@ public class HomeFragment extends Fragment {
     private TextView mTextViewResult;
     private RequestQueue mQueue;
 
-//    SearchView searchView;
 
     private static final String BASE_URL = "http://pharadorn.lnw.mn/API/getlocation.php";
 
@@ -85,11 +79,6 @@ public class HomeFragment extends Fragment {
         HomeActivity homeActivity = (HomeActivity) getActivity();
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-//        searchView = (SearchView) view.findViewById(R.id.search_bar);
-
-//        textView = view.findViewById(R.id.user);
-//        msg = homeActivity.getUser();
-//        textView.setText(msg);
 
         ImageSlider imageSlider = view.findViewById(R.id.slider);
         List<SlideModel> slideModels = new ArrayList<>();
@@ -104,16 +93,6 @@ public class HomeFragment extends Fragment {
         lat = new ArrayList<String>();
         log = new ArrayList<String>();
         name = new ArrayList<String>();
-
-//        exData.add("Test1");
-//        exData.add("Test2");
-//        exData.add("Test3");
-//        exData.add("Test4");
-//        exData.add("Test5");
-
-//        sampleList.setDivider(null);
-//        sampleList.setDividerHeight(0);
-//        sampleList.setDivider(null);
 
         new AsyncTask<Void, Void, Void>() {
 
@@ -195,32 +174,6 @@ public class HomeFragment extends Fragment {
         sampleList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //Toast.makeText(getActivity(), lat.indexOf(position), Toast.LENGTH_SHORT).show();
-//                String itemValue = (String) lat.getItemAtPosition(position);
-//                Toast.makeText(getActivity(), itemValue, Toast.LENGTH_SHORT).show();
-                //Toast.makeText(getActivity(), String.valueOf(log.get(position)), Toast.LENGTH_SHORT).show();
-
-//                Intent intent = new Intent(getActivity(), MapsFragment2.class);
-//                intent.putExtra(EXTRA_MESSAGE, log.get(position));
-//                intent.putExtra(EXTRA_MESSAGE2, lat.get(position));
-//                startActivity(intent);
-//                homeActivity.finish();
-//                Bundle bundle = new Bundle();
-//                bundle.putString("k_lat",lat.get(position));
-//                bundle.putString("k_log",log.get(position));
-//
-//                MapsFragment2 fragment2 = new MapsFragment2();
-//                fragment2.setArguments(bundle);
-//                getFragmentManager().beginTransaction().replace();
-
-//                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-//                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//
-//                MapsFragment2 mapsFragment2 = new MapsFragment2();
-//                mapsFragment2.setArguments(bundle);
-//
-//                fragmentTransaction.replace(R.id.fragment_container_view_tag, mapsFragment2);
-//                fragmentTransaction.commit();
 
                 Bundle bundle = new Bundle();
                 bundle.putString("key_lat", lat.get(position));
@@ -233,85 +186,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        
-        //Toast.makeText(getActivity(), lat.get(0), Toast.LENGTH_SHORT).show();
-
-//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String newText) {
-//
-//                return false;
-//            }
-//        });
-
-//        sampleList.setOnClickListener(new AdapterView.OnItemClickListener(){
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Toast.makeText(getActivity(),String.valueOf(position),Toast.LENGTH_SHORT).show();
-//            }
-//        });
-
-//        searchView.setOnQueryTextFocusChangeListener(new SearchView.OnQueryTextListener(){
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//                getActivity().sampleList.getFilter().filter(query);
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String newText) {
-//                return false;
-//            }
-//        });
-
-
-//        mTextViewResult = view.findViewById(R.id.text_view_result);
-//
-//        Button buttonParse = view.findViewById(R.id.button_parse);
-//
-//        mQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
-//
-//        buttonParse.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String url = "http://pharadorn.lnw.mn/API/markers.php";
-//                JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-//                    @Override
-//                    public void onResponse(JSONObject response) {
-//                        try {
-//                            JSONArray jsonArray = response.getJSONArray("TravelPlan2021");
-//
-//                            for (int i = 0; i < jsonArray.length(); i++) {
-//                                JSONObject travelplan = jsonArray.getJSONObject(i);
-//
-//                                String t_id = travelplan.getString("id");
-//                                String t_name = travelplan.getString("name");
-//                                String t_latitude = travelplan.getString("latitude");
-//                                String t_logitude = travelplan.getString("logitude");
-//                                String t_img = travelplan.getString("img");
-//
-//                                //mTextViewResult.append(id + name + String.valueOf(latitude) + String.valueOf(logitude) + img +"\n\n");
-//                                mTextViewResult.append(t_id + t_name + t_latitude + t_logitude + t_img);
-//                            }
-//                        } catch (JSONException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                }, new Response.ErrorListener() {
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//                        error.printStackTrace();
-//                    }
-//                });
-//
-//                mQueue.add(request);
-//            }
-//        });
        return view;
     }
 }

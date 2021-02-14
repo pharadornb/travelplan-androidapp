@@ -31,14 +31,7 @@ public class MeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        //HomeActivity homeActivity = (HomeActivity) getActivity();
         View view = inflater.inflate(R.layout.fragment_me, container, false);
-
-//        searchView = (SearchView) view.findViewById(R.id.search_bar);
-
-//        textView = view.findViewById(R.id.user);
-//        msg = homeActivity.getUser();
-//        textView.setText(msg);
 
         ImageSlider imageSlider = view.findViewById(R.id.slider);
         List<SlideModel> slideModels = new ArrayList<>();
@@ -92,13 +85,6 @@ public class MeFragment extends Fragment {
             }
         });
 
-//        TravelDAO todoListDAO = new TravelDAO(getActivity());
-//        TravelDAO.open();
-//        ArrayList<String> myListView = todoListDAO.getAllName();
-//
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, myListView);
-//        MyList.setAdapter(adapter);
-//        TravelDAO.close();
 
         return view;
     }

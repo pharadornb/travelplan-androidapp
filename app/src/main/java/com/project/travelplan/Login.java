@@ -83,11 +83,6 @@ public class Login extends AppCompatActivity {
                                     String result = putData.getResult();
                                     if(result.equals("Login Success")){
 
-                                        /*SharedPreferences sharedPref = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-                                        SharedPreferences.Editor editor = sharedPref.edit();
-                                        editor.putString(TEXT, username);
-                                        editor.commit();*/
-
                                         Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                                         intent.putExtra(EXTRA_MESSAGE, username);

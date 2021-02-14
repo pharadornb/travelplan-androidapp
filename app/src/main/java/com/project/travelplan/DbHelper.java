@@ -63,33 +63,4 @@ public class DbHelper extends SQLiteOpenHelper {
         return resDat;
     }
 
-
-    /*   private static final String databaseName = "travel.sqlite";
-    private static final int databaseVersion = 1;
-    Context myContext;
-
-    private static final String tableCreateSQL = "CREATE TABLE travel (" +
-            "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "name TEXT, " +
-            "latitude TEXT, " +
-            "logitude TEXT" +
-            ");";
-
-    //constructor
-    public DbHelper(Context context) {
-        super(context, databaseName, null, databaseVersion);
-        this.myContext = context;
-    }
-
-    @Override
-    public void onCreate(SQLiteDatabase db) {
-        db.execSQL(tableCreateSQL);
-//        String insertData1 = "INSERT INTO travel (name, latitude, logitude) VALUES ('อุทยานแห่งชาติเขาใหญ่', '14.438946', '101.372175')";
-//        db.execSQL(insertData1);
-    }
-
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
-    }*/
 }

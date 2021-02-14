@@ -68,18 +68,6 @@ public class MapsFragment2 extends Fragment {
                                     }else{
                                         Toast.makeText(getActivity(), "ไม่สามารถเพิ่มได้", Toast.LENGTH_SHORT).show();
                                     }
-//                                    Travel travel_name = new Travel();
-//                                    travel_name.setName(s_name);
-//                                    Travel travel_lat = new Travel();
-//                                    travel_lat.setLatitude(s_lat);
-//                                    Travel travel_log = new Travel();
-//                                    travel_log.setLogitude(s_log);
-//
-//                                    TravelDAO travelDAO = new TravelDAO(getActivity());
-//                                    travelDAO.open();
-//                                    travelDAO.add(travel_name, travel_lat, travel_log);
-//                                    travelDAO.close();
-                                    //Toast.makeText(getActivity(), s_name + " " + d_lat + " " + d_log , Toast.LENGTH_SHORT).show();
                                 }
                             })
                             .setNegativeButton("ไม่ใช่", new DialogInterface.OnClickListener() {
