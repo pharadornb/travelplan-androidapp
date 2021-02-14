@@ -1,5 +1,7 @@
 package com.project.travelplan;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.os.Bundle;
 
@@ -65,7 +67,28 @@ public class MeFragment extends Fragment {
         MyList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
+                builder
+                        .setMessage("ลบสถานที่ท่องเที่ยวนี้ของฉันไหม?")
+                        .setPositiveButton("ใช่",  new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int id) {
+                                Integer delRowQty = dbh.DeleteData(name.get(position));
+                                if(delRowQty > 0) {
+                                    Toast.makeText(getActivity(), "ลบเสร็จสิ้น กรุณาเปิดปิดแอพนี้หน้าใหม่", Toast.LENGTH_SHORT).show();
+                                }else{
+                                    Toast.makeText(getActivity(), "ลบไม่สำเร็จ!!", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        })
+                        .setNegativeButton("ไม่ใช่", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog,int id) {
+                                dialog.cancel();
+                            }
+                        })
+                        .show();
             }
         });
 

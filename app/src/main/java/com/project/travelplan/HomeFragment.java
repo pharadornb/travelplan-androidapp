@@ -111,6 +111,10 @@ public class HomeFragment extends Fragment {
 //        exData.add("Test4");
 //        exData.add("Test5");
 
+//        sampleList.setDivider(null);
+//        sampleList.setDividerHeight(0);
+//        sampleList.setDivider(null);
+
         new AsyncTask<Void, Void, Void>() {
 
             @Override

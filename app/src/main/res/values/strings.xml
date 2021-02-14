@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">travelplan</string>
+    <string name="app_name">TravelPlan</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="fullname">Fullname</string>
