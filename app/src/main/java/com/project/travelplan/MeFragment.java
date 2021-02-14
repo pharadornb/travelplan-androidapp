@@ -35,10 +35,10 @@ public class MeFragment extends Fragment {
 
         ImageSlider imageSlider = view.findViewById(R.id.slider);
         List<SlideModel> slideModels = new ArrayList<>();
-        slideModels.add(new SlideModel("http://pharadorn.lnw.mn/API/img/Z1.jpg", "ภาคเหนือ(วัดร่องขุน-เชียงราย) \nNorthern in thailand"));
-        slideModels.add(new SlideModel("http://pharadorn.lnw.mn/API/img/Z2.jpg", "ภาคอีสาน(วิหารเทพวิทยาคม-นครราชสีมา) \nNortheast in thailand"));
-        slideModels.add(new SlideModel("http://pharadorn.lnw.mn/API/img/Z3.jpg", "ภาคกลาง(วัดศรีรัตนศาสดาราม-กรุงเทพฯ) \nCentral Region in thailand"));
-        slideModels.add(new SlideModel("http://pharadorn.lnw.mn/API/img/Z4.jpg", "ภาคใต้(เกาะกำตก-ระนอง) \nSouthern in thailand"));
+        slideModels.add(new SlideModel("http://pharadorn.lnw.mn/API/img/Z1.jpg", "ภาคเหนือ(วัดร่องขุ่น-เชียงราย)"));
+        slideModels.add(new SlideModel("http://pharadorn.lnw.mn/API/img/Z2.jpg", "ภาคอีสาน(วิหารเทพวิทยาคม-นครราชสีมา)"));
+        slideModels.add(new SlideModel("http://pharadorn.lnw.mn/API/img/Z3.jpg", "ภาคกลาง(พระปรางค์วัดอรุณฯ-กรุงเทพฯ)"));
+        slideModels.add(new SlideModel("http://pharadorn.lnw.mn/API/img/Z4.jpg", "ภาคใต้(เกาะกำตก-ระนอง)"));
         imageSlider.setImageList(slideModels, true);
 
         MyList = (ListView) view.findViewById(R.id.MyList);
