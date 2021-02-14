@@ -10,6 +10,8 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.transition.Slide;
 
@@ -57,13 +59,14 @@ public class HomeFragment extends Fragment {
 
 //    private MyAsyncTask myAsyncTask = null;
 //    private boolean myAsyncTaskIsRunning = true;
-public final static String EXTRA_MESSAGE = "com.project.travelplan";
-    public final static String EXTRA_MESSAGE2 = "com.project.travelplan";
+//public final static String EXTRA_MESSAGE = "com.project.travelplan";
+//    public final static String EXTRA_MESSAGE2 = "com.project.travelplan";
 
     private ListView sampleList;
     private ArrayList<String> exData;
     private ArrayList<String> lat;
     private ArrayList<String> log;
+    private ArrayList<String> name;
     private ProgressDialog progressDialog;
 
     TextView textView;
@@ -71,7 +74,7 @@ public final static String EXTRA_MESSAGE = "com.project.travelplan";
     private TextView mTextViewResult;
     private RequestQueue mQueue;
 
-    //SearchView searchView;
+//    SearchView searchView;
 
     private static final String BASE_URL = "http://pharadorn.lnw.mn/API/getlocation.php";
 
@@ -82,7 +85,7 @@ public final static String EXTRA_MESSAGE = "com.project.travelplan";
         HomeActivity homeActivity = (HomeActivity) getActivity();
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        //searchView = (SearchView) view.findViewById(R.id.search_bar);
+//        searchView = (SearchView) view.findViewById(R.id.search_bar);
 
 //        textView = view.findViewById(R.id.user);
 //        msg = homeActivity.getUser();
@@ -100,6 +103,8 @@ public final static String EXTRA_MESSAGE = "com.project.travelplan";
         exData = new ArrayList<String>();
         lat = new ArrayList<String>();
         log = new ArrayList<String>();
+        name = new ArrayList<String>();
+
 //        exData.add("Test1");
 //        exData.add("Test2");
 //        exData.add("Test3");
@@ -122,7 +127,7 @@ public final static String EXTRA_MESSAGE = "com.project.travelplan";
                 //exData.add("OKKKKKKKK");
                 try {
                     //exData.add("OKKKKKKKK222222222");
-                    URL url = new URL("http://pharadorn.lnw.mn/API/getlocation.php");
+                    URL url = new URL("http://pharadorn.lnw.mn/API/location_api.php");
 
                     URLConnection urlConnection = url.openConnection();
 
@@ -137,7 +142,7 @@ public final static String EXTRA_MESSAGE = "com.project.travelplan";
                     if(httpURLConnection.getResponseCode() == HttpURLConnection.HTTP_OK)
                         inputStream = httpURLConnection.getInputStream();
 
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"), 8);
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
 
                     StringBuilder stringBuilder = new StringBuilder();
                     String line = null;
@@ -153,7 +158,13 @@ public final static String EXTRA_MESSAGE = "com.project.travelplan";
 
                     for(int i=0; i<exArray.length(); i++){
                         JSONObject jsonObj = exArray.getJSONObject(i);
-                        exData.add(jsonObj.getString("name"));
+
+                        if(jsonObj.getString("location") == "null" || jsonObj.getString("name") == "null"){
+
+                        }else{
+                            exData.add("\n" + jsonObj.getString("name") + "\n @" + jsonObj.getString("location") + "\n");
+                        }
+                        name.add(jsonObj.getString("name"));
                         lat.add(jsonObj.getString("latitude"));
                         log.add(jsonObj.getString("logitude"));
                     }
@@ -185,14 +196,40 @@ public final static String EXTRA_MESSAGE = "com.project.travelplan";
 //                Toast.makeText(getActivity(), itemValue, Toast.LENGTH_SHORT).show();
                 //Toast.makeText(getActivity(), String.valueOf(log.get(position)), Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(getActivity(), MapsFragment2.class);
-                intent.putExtra(EXTRA_MESSAGE, log.get(position));
-                intent.putExtra(EXTRA_MESSAGE2, lat.get(position));
-                startActivity(intent);
-                homeActivity.finish();
+//                Intent intent = new Intent(getActivity(), MapsFragment2.class);
+//                intent.putExtra(EXTRA_MESSAGE, log.get(position));
+//                intent.putExtra(EXTRA_MESSAGE2, lat.get(position));
+//                startActivity(intent);
+//                homeActivity.finish();
+//                Bundle bundle = new Bundle();
+//                bundle.putString("k_lat",lat.get(position));
+//                bundle.putString("k_log",log.get(position));
+//
+//                MapsFragment2 fragment2 = new MapsFragment2();
+//                fragment2.setArguments(bundle);
+//                getFragmentManager().beginTransaction().replace();
+
+//                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+//                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//
+//                MapsFragment2 mapsFragment2 = new MapsFragment2();
+//                mapsFragment2.setArguments(bundle);
+//
+//                fragmentTransaction.replace(R.id.fragment_container_view_tag, mapsFragment2);
+//                fragmentTransaction.commit();
+
+                Bundle bundle = new Bundle();
+                bundle.putString("key_lat", lat.get(position));
+                bundle.putString("key_log", log.get(position));
+                bundle.putString("key_name", name.get(position));
+
+                Fragment fragment = new MapsFragment2();
+                fragment.setArguments(bundle);
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
             }
         });
 
+        
         //Toast.makeText(getActivity(), lat.get(0), Toast.LENGTH_SHORT).show();
 
 //        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {

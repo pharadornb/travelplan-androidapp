@@ -13,12 +13,12 @@
     <string name="nexttologin">here</string>
     <string name="title_activity_main2">MainActivity</string>
     <string name="title_home">Home</string>
-    <string name="title_travel">Travel</string>
+    <string name="title_travel">MyMaps</string>
     <string name="title_trip">Trip</string>
-    <string name="title_me">Me</string>
+    <string name="title_me">MyTravel</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment1">1Hello blank fragment1******</string>
-    <string name="hello_blank_fragment2">2Hello blank fragment2++++++++++</string>
+    <string name="hello_blank_fragment1">สถานที่ท่องเที่ยวน่าสนใจ</string>
+    <string name="hello_blank_fragment2">สถานที่ท่องเที่ยวของฉัน</string>
     <string name="hello_blank_fragment3">3Hello blank fragment3-----------</string>
 
     <string name="urlserver">http://pharadorn.lnw.mn/API/markers.php</string>

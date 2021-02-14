@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MeFragment">
+
+    <com.denzcoskun.imageslider.ImageSlider
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        app:delay="1000"
+        app:placeholder="@drawable/logo"
+        app:error_image="@drawable/logo"
+        android:id="@+id/slider"
+        app:auto_cycle="true"
+        app:period="3000"
+        app:corner_radius="5"
+        />
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:layout_below="@+id/slider"
+        android:gravity="center_vertical"
+        android:id="@+id/test2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment2" />
+        android:layout_height="30dp"
+        android:text="@string/hello_blank_fragment2"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:drawableLeft="@drawable/ic_mytravel" />
 
-</FrameLayout>
+    <ListView
+        android:id="@+id/MyList"
+        android:layout_below="@+id/test2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</RelativeLayout>

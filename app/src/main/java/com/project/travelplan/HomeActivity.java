@@ -50,7 +50,7 @@ public class HomeActivity extends AppCompatActivity {
                     fragment = new HomeFragment();
                     break;
                 case R.id.travel:
-                    fragment = new MapsFragment2();
+                    fragment = new MapsFragment();
                     break;
                 case R.id.me:
                     fragment = new MeFragment();
