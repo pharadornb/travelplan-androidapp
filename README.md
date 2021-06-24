@@ -1,7 +1,7 @@
 # TravelPlanApp
 Project this about of subject 214324 Mobile Application Development, Information Technology, Suranaree University Of Technology, Nakhonrachasima , 30000 , Thailand
 # Developer:
-Lecturer : Asst.Dr. Thara Angskun<br/>
+Lecturer : Assoc.Dr. Thara Angskun<br/>
 Dev by : <a href="https://www.facebook.com/PharadornB/">Mr.Pharadorn Boonruam </a><br/>
 # How to using application
 ![alt text](http://pharadorn.lnw.mn/imguniplan/1.JPG)<br/>
