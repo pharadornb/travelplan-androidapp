@@ -11,3 +11,4 @@ Dev by : <a href="https://www.facebook.com/PharadornB/">Mr.Pharadorn Boonruam </
 ![alt text](http://pharadorn.lnw.mn/imguniplan/6.JPG)<br/>
 ![alt text](http://pharadorn.lnw.mn/imguniplan/7.JPG)<br/>
 ![alt text](http://pharadorn.lnw.mn/imguniplan/8.JPG)<br/>
+<p align="center">© 2021 <a href="https://www.facebook.com/PharadornB/">Phradorn Boonruam</a> Open-Source</p>
